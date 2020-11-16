@@ -4,6 +4,7 @@ import { Button, Block } from '../../../components'
 import { Link } from 'react-router-dom'
 
 import { UserOutlined, LockOutlined } from '@ant-design/icons'
+import { validateField } from '../../../utils/helpers'
 
 const LoginForm = (props) => {
   const {
@@ -23,27 +24,33 @@ const LoginForm = (props) => {
         <p>Please enter your account</p>
       </div>
       <Block>
-        <Form>
-          <Form.Item>
+        <Form onSubmit={handleSubmit} className="login-form">
+          <Form.Item validateStatus={validateField('email', touched, errors)} hasFeedback>
             <Input
+              id="email"
               prefix={<UserOutlined className="site-form-item-icon" />}
-              placeholder="Username"
+              placeholder="E-Mail"
               size="large"
+              value={values.email}
+              onChange={handleChange}
+              onBlur={handleBlur}
             />
           </Form.Item>
-          <Form.Item
-            name="password"
-            rules={[{ required: true, message: 'Please input your Password!' }]}
-          >
+          <Form.Item validateStatus={validateField('password', touched, errors)} hasFeedback>
             <Input
+              id="password"
               prefix={<LockOutlined className="site-form-item-icon" />}
               type="password"
               placeholder="Password"
               size="large"
+              value={values.password}
+              onChange={handleChange}
+              onBlur={handleBlur}
             />
           </Form.Item>
           <Form.Item>
-            <Button type="primary" size="large">
+            {isSubmitting && !isValid && <span>Ошибка!</span>}
+            <Button disabled={isSubmitting} onClick={handleSubmit} type="primary" size="large">
               LOG IN
             </Button>
           </Form.Item>
@@ -57,5 +64,3 @@ const LoginForm = (props) => {
 }
 
 export default LoginForm
-
-

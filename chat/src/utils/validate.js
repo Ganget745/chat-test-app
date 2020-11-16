@@ -1,5 +1,4 @@
-// eslint-disable-next-line import/no-anonymous-default-export
-export default ({ isAuth, values, errors }) => {
+const validateForm = ({ isAuth, values, errors }) => {
   const rules = {
     email: (value) => {
       if (!value) {
@@ -21,3 +20,5 @@ export default ({ isAuth, values, errors }) => {
 
   Object.keys(values).forEach((key) => rules[key] && rules[key](values[key]))
 }
+
+export default validateForm

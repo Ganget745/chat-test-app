@@ -4,20 +4,12 @@ import { Button, Block } from '../../../components'
 import { Link } from 'react-router-dom'
 
 import { UserOutlined, LockOutlined, MailOutlined, InfoCircleTwoTone } from '@ant-design/icons'
+import { validateField } from '../../../utils/helpers'
 
 const success = false
 
 const RegisterForm = (props) => {
-  const {
-    values,
-    touched,
-    errors,
-    handleChange,
-    handleBlur,
-    handleSubmit,
-    isValid,
-    isSubmitting
-  } = props
+  const { values, touched, errors, handleChange, handleBlur, handleSubmit, isValid } = props
   return (
     <div>
       <div className="auth__top">
@@ -26,11 +18,8 @@ const RegisterForm = (props) => {
       </div>
       <Block>
         {!success ? (
-          <Form onSubmit={handleSubmit}>
-            <Form.Item
-              validateStatus={!touched.email ? '' : errors.email ? 'error' : 'success'}
-              hasFeedback
-            >
+          <Form onSubmit={handleSubmit} className="login-form">
+            <Form.Item validateStatus={validateField('email', touched, errors)} hasFeedback>
               <Input
                 id="email"
                 prefix={<MailOutlined className="site-form-item-icon" />}
@@ -41,22 +30,15 @@ const RegisterForm = (props) => {
                 onBlur={handleBlur}
               />
             </Form.Item>
-            <Form.Item
-              name="Nick-name"
-              rules={[{ required: true, message: 'Please input your Nick-name!' }]}
-            >
+            <Form.Item>
               <Input
                 prefix={<UserOutlined className="site-form-item-icon" />}
                 type="text"
                 placeholder="Nick-name"
                 size="large"
-                value={values.email}
               />
             </Form.Item>
-            <Form.Item
-              validateStatus={!touched.password ? '' : errors.password ? 'error' : 'success'}
-              hasFeedback
-            >
+            <Form.Item validateStatus={validateField('password', touched, errors)} hasFeedback>
               <Input
                 id="password"
                 prefix={<LockOutlined className="site-form-item-icon" />}
@@ -68,13 +50,10 @@ const RegisterForm = (props) => {
                 onBlur={handleBlur}
               />
             </Form.Item>
-            <Form.Item
-              name="confirm password"
-              rules={[{ required: true, message: 'Please confirm your Password!' }]}
-            >
+            <Form.Item validateStatus={validateField('password', touched, errors)} hasFeedback>
               <Input
                 prefix={<LockOutlined className="site-form-item-icon" />}
-                type="password"
+                type="password2"
                 placeholder="Confirm Password"
                 size="large"
               />
