@@ -1,10 +1,8 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import distanceInWordsToNow from 'date-fns/distance_in_words_to_now'
-import ruLocale from 'date-fns/locale/ru'
 import classNames from 'classnames'
-import chek from '../../assets/chek.svg'
-import noreaded from '../../assets/noreaded.svg'
+
+import { Time, IconReaded } from '../'
 
 import './Message.scss'
 
@@ -17,17 +15,7 @@ const Message = ({ avatar, user, text, date, isMe, isReaded, attachments, isTypi
     })}
   >
     <div className="message__content">
-      {isMe &&
-        (isReaded ? (
-          <img className="message__icon-readed" src={chek} alt="Readed icon" />
-        ) : (
-          <img
-            className="message__icon-readed message__icon-readed--no"
-            src={noreaded}
-            alt="No Readed icon"
-          />
-        ))}
-
+      <IconReaded isMe={isMe} isReaded={isReaded} />
       <div className="message__avatar">
         <img src={avatar} alt={`Avatar ${user.fullname}`} />
       </div>
@@ -54,7 +42,7 @@ const Message = ({ avatar, user, text, date, isMe, isReaded, attachments, isTypi
         </div>
         {date && (
           <span className="message__date">
-            {distanceInWordsToNow(date, { addSuffix: true, locale: ruLocale })}
+            <Time date={date} />
           </span>
         )}
       </div>
@@ -72,6 +60,8 @@ Message.propTypes = {
   date: PropTypes.string,
   user: PropTypes.object,
   attachments: PropTypes.array,
+  isMe: PropTypes.bool,
+  isReaded: PropTypes.bool,
   isTyping: PropTypes.bool
 }
 
