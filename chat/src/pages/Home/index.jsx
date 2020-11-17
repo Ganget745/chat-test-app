@@ -1,50 +1,27 @@
 import React from 'react'
 
-import { DialogItem } from '../../components'
+import { Dialogs } from '../../components'
 
 import './Home.scss'
 
 const Home = () => {
   return (
     <section className="home">
-      <div className="dialogs">
-        <DialogItem
-          user={{
-            fullname: 'Федор Достоевский',
-            isOnline: true
-          }}
-          unreaded={5}
-        />
-        <DialogItem
-          user={{
-            fullname: 'Федор Достоевский',
-            isOnline: false
-          }}
-          unreaded={324}
-        />
-        <DialogItem
-          user={{
-            fullname: 'Федор Достоевский',
-            isOnline: true
-          }}
-          unreaded={0}
-        />
-      </div>
-      {/* <Dialogs
+      <Dialogs
         items={[
           {
             user: {
               fullname: 'Vladyslav Hrechanyi',
               avatar: null
             },
-            message: {
-              text: 'Я пытаюсь сделать чат и очень сильно заебался, просто пиздеццццц',
+            lastMessage: {
+              text: 'Го за шишками бро',
               isReaded: false,
-              created_at: new Date()
+              created_at: 'Tue Nov 17 2020 02:35:34'
             }
           }
         ]}
-      /> */}
+      />
 
       {/* <Message
         avatar="https://ixbt.online/live/images/06/40/71/2018/08/18/avatar.jpg?w=48&h=48&resize=entropy"
