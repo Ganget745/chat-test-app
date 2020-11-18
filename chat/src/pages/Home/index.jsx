@@ -1,5 +1,4 @@
 import React from 'react'
-
 import { Dialogs, Message } from '../../components'
 
 import './Home.scss'
@@ -11,21 +10,21 @@ const Home = () => {
         userId={0}
         items={[
           {
-            _id: 'ba2e3dd3d9f8528c6c6dcd21bb94041a',
+            _id: 'ba2e3dd3d9f85243r4c6c6dcd21bb94041a',
             text: 'Го за шишками бро',
             created_at: 'Tue Nov 16 2020 02:35:34',
             user: {
-              _id: 1,
+              _id: 'ba2e3dd3d9123528c6c6dcd21bb94041a',
               fullname: 'Vladyslav Hrechanyi',
               avatar: null
             }
           },
           {
-            _id: Math.random(),
+            _id: 'ba2e3dd3d9f8528c6ccsf3cd21bb94041a',
             text: 'Го за феном бро',
             created_at: 'Tue Nov 17 2020 12:35:34',
             user: {
-              _id: 1,
+              _id: 'ba2e3dd3d9f8531238c6c6dcd21bb94041a',
               fullname: 'Narko Pump',
               avatar:
                 'https://ixbt.online/live/images/06/40/71/2018/08/18/avatar.jpg?w=48&h=48&resize=entropy'

@@ -3,8 +3,7 @@ import classNames from 'classnames'
 import format from 'date-fns/format'
 import isToday from 'date-fns/is_today'
 
-
-import { IconReaded } from '../'
+import { IconReaded, Avatar } from '../'
 
 import './DialogItem.scss'
 
@@ -16,22 +15,10 @@ const getMessageTime = (created_at) => {
   }
 }
 
-const getAvatar = (avatar) => {
-  if (avatar) {
-    return (
-      <img
-        src="https://ixbt.online/live/images/06/40/71/2018/08/18/avatar.jpg?w=48&h=48&resize=entropy"
-        alt=""
-      />
-    )
-  } else {
-    // make avatar
-  }
-}
 
-const DialogItem = ({ user, unreaded, created_at, text, isMe }) => (
+const DialogItem = ({ user, unread, created_at, text, isMe }) => (
   <div className={classNames('dialogs__item', { 'dialogs__item--online': user.isOnline })}>
-    <div className="dialogs__item-avatar">{getAvatar(user.avatar)}</div>
+    <div className="dialogs__item-avatar"><Avatar user={user} /></div>
     <div className="dialogs__item-info">
       <div className="dialogs__item-info-top">
         <b>{user.fullname}</b>
@@ -40,8 +27,8 @@ const DialogItem = ({ user, unreaded, created_at, text, isMe }) => (
       <div className="dialogs__item-info-bottom">
         <p>{text}</p>
         {isMe && <IconReaded isMe={true} isReaded={false} />}
-        {unreaded > 0 && (
-          <div className="dialogs__item-info-bottom-count">{unreaded > 99 ? '+99' : unreaded}</div>
+        {unread > 0 && (
+          <div className="dialogs__item-info-bottom-count">{unread > 99 ? '+99' : unread}</div>
         )}
       </div>
     </div>
