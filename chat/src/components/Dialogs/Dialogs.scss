@@ -1,6 +1,5 @@
 @import "../../styles/variables";
 .dialogs {
-  width: 300px;
   &__item {
     $item: &;
     display: flex;
@@ -59,7 +58,7 @@
           opacity: 0.5;
           text-overflow: ellipsis;
           overflow: hidden;
-          width: 220px;
+          width: 180px;
           height: 1.2em;
           white-space: nowrap;
         }

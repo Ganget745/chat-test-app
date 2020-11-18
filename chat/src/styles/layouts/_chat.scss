@@ -1,5 +1,6 @@
 .chat {
   display: flex;
+  height: 100%;
   background-color: #fff;
   width: 1140px;
   margin: 0 auto;
@@ -38,7 +39,16 @@
 
       &-dialogs {
         .dialogs {
-          padding: 0 20px;
+         &__item {
+            padding: 10px 20px;
+            margin-bottom: 0;
+            cursor: pointer;
+
+            &.active,
+            &:hover {
+              background-color: #f3f7ff;
+            }
+         }
         }
       }
 
@@ -46,5 +56,47 @@
 
     &__dialog {
       flex: 1;
+
+      &-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 20px;
+        border-bottom: 2px solid #f7f7f7;
+
+        &-center {
+          text-align: center;
+        }
+
+        &-center {
+          .status {
+            display: inline-block;
+            color: #bfbfbf;
+            position: relative;
+            &--online {
+              &::before {
+                background-color: #00d841;
+              }
+            }
+            &::before {
+              display: block;
+              position: absolute;
+              content: '';
+              width: 6px;
+              height: 6px;
+              border-radius: 30px;
+              background-color: #D3D3D3;
+            }
+          }
+        }
+
+        &-username {
+          display: block;
+          margin-bottom: 5px;
+          font-weight: 500;
+
+
+        }
+      }
     }
 }
