@@ -11,7 +11,7 @@ const Home = () => {
         userId={0}
         items={[
           {
-            _id: Math.random(),
+            _id: 'ba2e3dd3d9f8528c6c6dcd21bb94041a',
             text: 'Го за шишками бро',
             created_at: 'Tue Nov 16 2020 02:35:34',
             user: {
