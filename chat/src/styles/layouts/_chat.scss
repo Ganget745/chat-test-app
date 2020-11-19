@@ -13,7 +13,10 @@
       &-header {
         display: flex;
         justify-content: space-between;
-        padding: 20px;
+        padding: 21px;
+        height: 58px;
+        border-bottom: 2px solid #f7f7f7;
+        margin-bottom: 20px;
 
         & > div {
           svg {
@@ -61,34 +64,13 @@
         display: flex;
         justify-content: space-between;
         align-items: center;
-        padding: 20px;
+        padding: 12px;
         border-bottom: 2px solid #f7f7f7;
 
         &-center {
           text-align: center;
         }
 
-        &-center {
-          .status {
-            display: inline-block;
-            color: #bfbfbf;
-            position: relative;
-            &--online {
-              &::before {
-                background-color: #00d841;
-              }
-            }
-            &::before {
-              display: block;
-              position: absolute;
-              content: '';
-              width: 6px;
-              height: 6px;
-              border-radius: 30px;
-              background-color: #D3D3D3;
-            }
-          }
-        }
 
         &-username {
           display: block;
@@ -97,6 +79,12 @@
 
 
         }
+      }
+
+      &-messages {
+        padding: 20px;
+        overflow: auto;
+        height: calc(100% - 58px);
       }
     }
 }

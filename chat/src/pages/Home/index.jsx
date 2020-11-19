@@ -1,7 +1,7 @@
 import React from 'react'
 import { Input } from 'antd'
 import { TeamOutlined, FormOutlined, EllipsisOutlined } from '@ant-design/icons'
-import { Dialogs, Message } from '../../components'
+import { Dialogs, Message, Status } from '../../components'
 
 import './Home.scss'
 
@@ -169,10 +169,10 @@ const Home = () => {
             <div className="chat__dialog-header-center">
               <b className="chat__dialog-header-username">Vladyslav Hrechanyi</b>
               <div className="chat__dialog-header-status">
-                <span className="status status--online">online</span>
+                <Status online />
               </div>
             </div>
-            <EllipsisOutlined style={{ fontSize: "22px"}}/>
+            <EllipsisOutlined style={{ fontSize: '22px' }} />
           </div>
           <div className="chat__dialog-messages">
             <Message
@@ -214,6 +214,46 @@ const Home = () => {
                   url: 'https://source.unsplash.com/100x100/?random=1&nature,water'
                 }
               ]}
+            />
+            <Message
+              avatar="https://ixbt.online/live/images/06/40/71/2018/08/18/avatar.jpg?w=48&h=48&resize=entropy"
+              text="whats up nigga пошли бухать оатыатыштпаышта"
+              date="Sun Nov 15 2020 14:05:31"
+            />
+            <Message
+              avatar="https://ixbt.online/live/images/06/40/71/2018/08/18/avatar.jpg?w=48&h=48&resize=entropy"
+              text="whats up nigga пошли бухать оатыатыштпаышта"
+              date="Sun Nov 15 2020 14:05:31"
+            />
+            <Message
+              avatar="https://ixbt.online/live/images/06/40/71/2018/08/18/avatar.jpg?w=48&h=48&resize=entropy"
+              text="whats up nigga пошли бухать оатыатыштпаышта"
+              date="Sun Nov 15 2020 14:05:31"
+            />
+            <Message
+              avatar="https://ixbt.online/live/images/06/40/71/2018/08/18/avatar.jpg?w=48&h=48&resize=entropy"
+              text="whats up nigga пошли бухать оатыатыштпаышта"
+              date="Sun Nov 15 2020 14:05:31"
+            />
+            <Message
+              avatar="https://ixbt.online/live/images/06/40/71/2018/08/18/avatar.jpg?w=48&h=48&resize=entropy"
+              text="whats up nigga пошли бухать оатыатыштпаышта"
+              date="Sun Nov 15 2020 14:05:31"
+            />
+            <Message
+              avatar="https://ixbt.online/live/images/06/40/71/2018/08/18/avatar.jpg?w=48&h=48&resize=entropy"
+              text="whats up nigga пошли бухать оатыатыштпаышта"
+              date="Sun Nov 15 2020 14:05:31"
+            />
+            <Message
+              avatar="https://ixbt.online/live/images/06/40/71/2018/08/18/avatar.jpg?w=48&h=48&resize=entropy"
+              text="whats up nigga пошли бухать оатыатыштпаышта"
+              date="Sun Nov 15 2020 14:05:31"
+            />
+            <Message
+              avatar="https://ixbt.online/live/images/06/40/71/2018/08/18/avatar.jpg?w=48&h=48&resize=entropy"
+              text="whats up nigga пошли бухать оатыатыштпаышта"
+              date="Sun Nov 15 2020 14:05:31"
             />
           </div>
         </div>
