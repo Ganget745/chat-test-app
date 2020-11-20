@@ -17,6 +17,12 @@
         height: 58px;
         border-bottom: 2px solid #f7f7f7;
         margin-bottom: 20px;
+        align-items: center;
+
+        .ant-btn-circle {
+          position: relative;
+          left: 5px;
+        }
 
         & > div {
           svg {
@@ -41,7 +47,10 @@
       }
 
       &-dialogs {
+        height: calc(100% - 138px);
         .dialogs {
+          height: 100%;
+          overflow: auto;
          &__item {
             padding: 10px 20px;
             margin-bottom: 0;
@@ -67,6 +76,12 @@
         padding: 12px;
         border-bottom: 2px solid #f7f7f7;
 
+        .ant-btn-circle {
+          .anticon {
+            font-size: 22px;
+          }
+        }
+
         &-center {
           text-align: center;
         }
@@ -83,8 +98,9 @@
 
       &-messages {
         padding: 20px;
+        padding-bottom: 0;
         overflow: auto;
-        height: calc(100% - 58px);
+        height: calc(100% - 138px);
       }
     }
 }

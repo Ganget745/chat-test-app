@@ -1,7 +1,7 @@
 import React from 'react'
-import { Input } from 'antd'
+import { Input, Button } from 'antd'
 import { TeamOutlined, FormOutlined, EllipsisOutlined } from '@ant-design/icons'
-import { Dialogs, Message, Status } from '../../components'
+import { Dialogs, Message, Status, ChatInput } from '../../components'
 
 import './Home.scss'
 
@@ -14,10 +14,10 @@ const Home = () => {
         <div className="chat__sidebar">
           <div className="chat__sidebar-header">
             <div>
-              <TeamOutlined />
+              <Button type="link" shape="circle" icon={<TeamOutlined />} />
               <span>Dialogs list</span>
             </div>
-            <FormOutlined />
+            <Button type="link" shape="circle" icon={<FormOutlined />} />
           </div>
 
           <div className="chat__sidebar-search">
@@ -172,7 +172,11 @@ const Home = () => {
                 <Status online />
               </div>
             </div>
-            <EllipsisOutlined style={{ fontSize: '22px' }} />
+            <Button
+              type="link"
+              shape="circle"
+              icon={<EllipsisOutlined />}
+            />
           </div>
           <div className="chat__dialog-messages">
             <Message
@@ -255,6 +259,9 @@ const Home = () => {
               text="whats up nigga пошли бухать оатыатыштпаышта"
               date="Sun Nov 15 2020 14:05:31"
             />
+          </div>
+          <div className="chat__dialog-input">
+            <ChatInput />
           </div>
         </div>
       </div>
