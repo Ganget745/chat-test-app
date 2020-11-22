@@ -1,9 +1,23 @@
 @import "../../styles/variables";
 .dialogs {
+  &__search {
+        padding: 2px 20px 20px 20px;
+
+        span {
+          background-color: #f7f8f9;
+        }
+        input {
+          background-color: #f7f8f9;
+        }
+        button {
+          background-color: #f7f8f9;
+        }
+      }
   &__item {
     $item: &;
     display: flex;
     margin-bottom: 20px;
+
 
     &-avatar {
      position: relative;
