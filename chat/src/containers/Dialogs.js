@@ -1,4 +1,7 @@
 import React, { useState } from 'react'
+import { connect } from 'react-redux'
+
+import { dialogsActions } from '../redux/actions'
 import { Dialogs as BaseDialogs } from '../components'
 
 const Dialogs = ({ items, userId }) => {
@@ -16,4 +19,4 @@ const Dialogs = ({ items, userId }) => {
   )
 }
 
-export default Dialogs
+export default connect(({ dialogs }) => dialogs, dialogsActions)(Dialogs)

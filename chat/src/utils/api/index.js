@@ -1,1 +1,1 @@
-export { default as dialogs } from './dialogs'
+export { default as dialogsApi } from './dialogs'
