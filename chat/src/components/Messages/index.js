@@ -4,8 +4,8 @@ import { Empty } from 'antd'
 
 import { Message } from '../'
 
-const Messages = ({ items }) => {
-  return items ? (
+const Messages = ({  }) => {
+  return  (
     <div>
       <Message
         avatar="https://ixbt.online/live/images/06/40/71/2018/08/18/avatar.jpg?w=48&h=48&resize=entropy"
@@ -88,9 +88,7 @@ const Messages = ({ items }) => {
         date="Sun Nov 15 2020 14:05:31"
       />
     </div>
-  ) : (
-    <Empty description="Nothing found" />
-  )
+  ) 
 }
 
 Messages.propTypes = {
